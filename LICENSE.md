@@ -1,6 +1,6 @@
-MIT License
+# MIT License
 
-Copyright (c) 2021 Chris Herborth
+Copyright ⓒ 2021 Chris Herborth (chrish@pobox.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
