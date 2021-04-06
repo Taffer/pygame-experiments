@@ -9,8 +9,8 @@
     "build_systems":
     [
         {
-            "name": "Python Arcade",
-            "shell_cmd": "python3 $project_path/main.py",
+            "name": "Pygame - Main",
+            "shell_cmd": "cd $project_path ; python3 main.py",
         },
     ],
 }

@@ -21,7 +21,7 @@ You can run it from this directory with:
 If you're using Sublime Text:
 
 1. Open the project.
-1. Under Tools -> Build System, choose "Python Arcade". You only need to pick
+1. Under Tools -> Build System, choose "Pygame - Main". You only need to pick
    the build system once, it's stored in the workspace file.
 1. Choose Tools -> Build or press its shortcut (Ctrl+B).
 
