@@ -1,0 +1,16 @@
+{
+    "folders":
+    [
+        {
+            "name": "Experiment 1 - Scrolling Texture",
+            "path": "."
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "Python Arcade",
+            "shell_cmd": "python3 $project_path/main.py",
+        },
+    ],
+}
