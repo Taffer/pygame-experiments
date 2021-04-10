@@ -8,6 +8,12 @@ These are ports of my
 see where this goes. Lua's easy enough and fast, but I'm happier developing in
 Python…
 
+Click through for more info:
+
+* [01-scrolling-texture](01-scrolling-texture)
+* [05-image-fades](05-image-fades)
+* [07-animated-icon](07-animated-icon)
+
 ## `pycodestyle`
 
 Note that I use the following settings for `pycodestyle` while working in
