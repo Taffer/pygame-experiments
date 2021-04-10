@@ -14,6 +14,8 @@ SCREEN_TITLE = 'Experiment 1 - Scrolling Texture'
 SCREEN_WIDTH = 1280  # 720p screen
 SCREEN_HEIGHT = 720
 
+BLACK = pygame.Color('black')
+
 
 def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -29,12 +31,11 @@ def main():
     rect2.top = 100
     rect2.left = 200
     area = pygame.Rect(0, 0, rect1.width, rect1.height)
-    ticks = 0
 
     now = time.time()
     dt = 0
     while True:
-        screen.fill((0, 0, 0, 1))
+        screen.fill(BLACK)
         screen.blit(robot1, rect1)
         screen.blit(robot2, rect2, area)
         pygame.display.flip()
@@ -43,14 +44,11 @@ def main():
         now = time.time()
         if dt > 1/60:
             dt = dt - 1/60
-            ticks = ticks + 1
 
-            robot2.scroll(0, -1)
+            area.y += 1
 
-            if ticks >= 126:
-                # This seems like it might be very inefficient...
-                robot2 = pygame.image.load('resources/character_robot_jump-2y.png')
-                ticks = 0
+            if area.y >= 126:
+                area.y = 0
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
