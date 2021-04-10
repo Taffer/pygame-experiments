@@ -13,6 +13,7 @@ Click through for more info:
 * [01-scrolling-texture](01-scrolling-texture)
 * [05-image-fades](05-image-fades)
 * [07-animated-icon](07-animated-icon)
+* [11-tilemap](11-tilemap)
 
 ## `pycodestyle`
 
