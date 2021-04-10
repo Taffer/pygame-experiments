@@ -14,6 +14,8 @@ SCREEN_TITLE = 'Experiment 5 - Image Fades'
 SCREEN_WIDTH = 1280  # 720p screen
 SCREEN_HEIGHT = 720
 
+BLACK = pygame.Color('black')
+
 
 def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -26,7 +28,7 @@ def main():
 
     rect2 = robot1.get_rect()
     alpha2 = pygame.Surface((rect2.width, rect2.height))
-    alpha2.fill((0, 0, 0, 0))
+    alpha2.fill(BLACK)
     alpha2.set_alpha(255)
     rect2.top = 100
     rect2.left = 250
@@ -35,7 +37,7 @@ def main():
     dt = 0
     alpha = 255
     while True:
-        screen.fill((0, 0, 0, 1))
+        screen.fill(BLACK)
         screen.blit(robot1, rect1)  # Normal sprite
 
         screen.blit(robot1, rect2)  # Linear fade
