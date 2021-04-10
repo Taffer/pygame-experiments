@@ -23,7 +23,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption(SCREEN_TITLE)
 
-    robot = pygame.image.load('resources/character_robot_sheet.png')
+    robot = pygame.image.load('resources/character_robot_sheet.png').convert_alpha()
 
     # Frame co-ordinates from character_robot_sheet.xml. Luckily they're all
     # in one row, so this is easy to loop through.

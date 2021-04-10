@@ -23,12 +23,12 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption(SCREEN_TITLE)
 
-    robot1 = pygame.image.load('resources/character_robot_jump.png')
+    robot1 = pygame.image.load('resources/character_robot_jump.png').convert_alpha()
     rect1 = robot1.get_rect()
     rect1.top = 100
     rect1.left = 100
 
-    robot2 = pygame.image.load('resources/character_robot_jump-2y.png')
+    robot2 = pygame.image.load('resources/character_robot_jump-2y.png').convert_alpha()
     rect2 = robot2.get_rect()
     rect2.top = 100
     rect2.left = 200
