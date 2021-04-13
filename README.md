@@ -44,8 +44,8 @@ work, you have the option of fuelling it with coffee. ;-)
 
 ## Credits
 
-This is written in Python 3, using the [Arcade](https://arcade.academy/) 2D
-game engine. I didn't know about that until I stumbled on it early in 2021.
+This is written in Python 3, using the [Pygame](https://www.pygame.org/) 2D
+game engine.
 
 ## License
 
