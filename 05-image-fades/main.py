@@ -17,44 +17,65 @@ SCREEN_HEIGHT = 720
 BLACK = pygame.Color('black')
 
 
+class Demo:
+    def __init__(self, screen):
+        self.screen = screen
+
+        self.robot1 = pygame.image.load('resources/character_robot_jump.png').convert_alpha()
+        self.rect1 = self.robot1.get_rect()
+        self.rect1.top = 100
+        self.rect1.left = 100
+
+        self.rect2 = self.robot1.get_rect()
+        self.alpha2 = pygame.Surface((self.rect2.width, self.rect2.height))
+        self.alpha2.fill(BLACK)
+        self.alpha2.set_alpha(255)
+        self.rect2.top = 100
+        self.rect2.left = 250
+
+        self.alpha = 255
+
+        self.ticks = 0
+
+    def draw(self):
+        self.screen.fill(BLACK)
+
+        self.screen.fill(BLACK)
+        self.screen.blit(self.robot1, self.rect1)  # Normal sprite
+
+        self.screen.blit(self.robot1, self.rect2)  # Linear fade
+        self.screen.blit(self.alpha2, self.rect2)
+
+    def update(self, dt):
+        self.ticks += dt
+
+        if self.ticks > 1/60:
+            self.ticks -= 1/60
+            self.alpha -= 256/120
+            if self.alpha < 0:
+                self.alpha = 255
+            self.alpha2.set_alpha(self.alpha)
+
+
 def main():
     pygame.init()
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption(SCREEN_TITLE)
 
-    robot1 = pygame.image.load('resources/character_robot_jump.png').convert_alpha()
-    rect1 = robot1.get_rect()
-    rect1.top = 100
-    rect1.left = 100
-
-    rect2 = robot1.get_rect()
-    alpha2 = pygame.Surface((rect2.width, rect2.height))
-    alpha2.fill(BLACK)
-    alpha2.set_alpha(255)
-    rect2.top = 100
-    rect2.left = 250
+    demo = Demo(screen)
 
     now = time.time()
     dt = 0
-    alpha = 255
+
     while True:
-        screen.fill(BLACK)
-        screen.blit(robot1, rect1)  # Normal sprite
-
-        screen.blit(robot1, rect2)  # Linear fade
-        screen.blit(alpha2, rect2)
-
+        demo.draw()
         pygame.display.flip()
 
-        dt = dt + time.time() - now
+        dt = time.time() - now
         now = time.time()
-        if dt > 1/60:
-            dt = dt - 1/60
-            alpha = alpha - 256/120
-            if alpha < 0:
-                alpha = 255
-            alpha2.set_alpha(alpha)
+
+        demo.update(dt)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

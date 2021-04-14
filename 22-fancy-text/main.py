@@ -8,6 +8,7 @@ import pygame.freetype
 import pygame.gfxdraw
 import re
 import sys
+import time
 
 SCREEN_TITLE = 'Experiment 22 - Fancy Text'
 
@@ -105,23 +106,45 @@ class TextView:
             self.text.append((w, self.font.get_rect(w), style, fgcolor, bgcolor))
 
 
+class Demo:
+    def __init__(self, screen):
+        self.screen = screen
+
+        self.font = pygame.freetype.Font('resources/LiberationSerif-Bold.ttf', 16)
+        self.font.origin = True
+
+        self.textview = TextView(pygame.Rect(100, 100, 800, 600), self.font, WHITE, BLACK)
+
+    def draw(self):
+        self.screen.fill(BLACK)
+        self.font.render_to(self.screen, (10, 10), 'Press any key to add text.', WHITE)
+        self.textview.draw(self.screen)
+
+    def update(self, dt):
+        pass
+
+
 def main():
     pygame.init()
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption(SCREEN_TITLE)
 
-    font = pygame.freetype.Font('resources/LiberationSerif-Bold.ttf', 16)
-    font.origin = True
+    demo = Demo(screen)
 
-    textview = TextView(pygame.Rect(100, 100, 800, 600), font, WHITE, BLACK)
+    now = time.time()
+    dt = 0
+
     add_idx = 0
 
     while True:
-        screen.fill(BLACK)
-        font.render_to(screen, (10, 10), 'Press any key to add text.', WHITE)
-        textview.draw(screen)
+        demo.draw()
         pygame.display.flip()
+
+        dt = time.time() - now
+        now = time.time()
+
+        demo.update(dt)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -130,11 +153,10 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     sys.exit()
                 elif event.key == pygame.K_SPACE:
-                    textview.add_text(FORMATTED_TEXT[add_idx])
+                    demo.textview.add_text(FORMATTED_TEXT[add_idx])
                     add_idx += 1
                     if add_idx >= len(FORMATTED_TEXT):
                         add_idx = 0
-
 
 
 if __name__ == '__main__':

@@ -7,6 +7,7 @@ import os
 import pygame
 import pygame.freetype
 import sys
+import time
 
 from xml.etree import ElementTree
 
@@ -78,24 +79,69 @@ class Map:
                     surface.blit(tile, target)
 
 
+class Demo:
+    def __init__(self, screen):
+        self.screen = screen
+
+        self.map = Map('resources/map.tmx')
+
+        self.rect = screen.get_rect()
+        self.view_rect = pygame.Rect(0, 0, self.rect.width // self.map.tile_width, self.rect.height // self.map.tile_height)
+
+        self.font = pygame.freetype.Font('resources/fonts/LiberationSerif-Bold.ttf', 16)
+
+    def draw(self):
+        self.screen.fill(BLACK)
+        self.map.render(self.screen, self.view_rect)
+        self.font.render_to(self.screen, (10, 10), 'Press arrow keys or WASD.', WHITE)
+
+    def update(self, dt):
+        pass
+
+    def view_left(self):
+        # Move viewport left.
+        self.view_rect.x -= 1
+        if self.view_rect.x < 0:
+            self.view_rect.x = 0
+
+    def view_right(self):
+        # Move viewport right.
+        self.view_rect.x += 1
+        if (self.view_rect.x + self.view_rect.width) > self.map.map_width:
+            self.view_rect.x -= 1
+
+    def view_up(self):
+        # Move viewport up.
+        self.view_rect.y -= 1
+        if self.view_rect.y < 0:
+            self.view_rect.y = 0
+
+    def view_down(self):
+        # Move viewport down.
+        self.view_rect.y += 1
+        if (self.view_rect.y + self.view_rect.height) > self.map.map_height:
+            self.view_rect.y -= 1
+
+
 def main():
     pygame.init()
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption(SCREEN_TITLE)
 
-    map = Map('resources/map.tmx')
+    demo = Demo(screen)
 
-    rect = screen.get_rect()
-    view_rect = pygame.Rect(0, 0, rect.width // map.tile_width, rect.height // map.tile_height)
-
-    font = pygame.freetype.Font('resources/fonts/LiberationSerif-Bold.ttf', 16)
+    now = time.time()
+    dt = 0
 
     while True:
-        screen.fill(BLACK)
-        map.render(screen, view_rect)
-        font.render_to(screen, (10, 10), 'Press arrow keys or WASD.', WHITE)
+        demo.draw()
         pygame.display.flip()
+
+        dt = time.time() - now
+        now = time.time()
+
+        demo.update(dt)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -104,25 +150,13 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     sys.exit()
                 elif event.key in (pygame.K_w, pygame.K_UP):
-                    # Move viewport up.
-                    view_rect.y -= 1
-                    if view_rect.y < 0:
-                        view_rect.y = 0
+                    demo.view_up()
                 elif event.key in (pygame.K_s, pygame.K_DOWN):
-                    # Move viewport down.
-                    view_rect.y += 1
-                    if (view_rect.y + view_rect.height) > map.map_height:
-                        view_rect.y -= 1
+                    demo.view_down()
                 elif event.key in (pygame.K_a, pygame.K_LEFT):
-                    # Move viewport left.
-                    view_rect.x -= 1
-                    if view_rect.x < 0:
-                        view_rect.x = 0
+                    demo.view_left()
                 elif event.key in (pygame.K_d, pygame.K_RIGHT):
-                    # Move viewport right.
-                    view_rect.x += 1
-                    if (view_rect.x + view_rect.width) > map.map_width:
-                        view_rect.x -= 1
+                    demo.view_right()
 
 
 if __name__ == '__main__':
