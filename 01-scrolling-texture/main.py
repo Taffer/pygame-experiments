@@ -17,40 +17,59 @@ SCREEN_HEIGHT = 720
 BLACK = pygame.Color('black')
 
 
+class Demo:
+    def __init__(self, screen):
+        self.screen = screen
+
+        self.robot1 = pygame.image.load('resources/character_robot_jump.png').convert_alpha()
+        self.rect1 = self.robot1.get_rect()
+        self.rect1.top = 100
+        self.rect1.left = 100
+
+        self.robot2 = pygame.image.load('resources/character_robot_jump-2y.png').convert_alpha()
+        self.rect2 = self.robot2.get_rect()
+        self.rect2.top = 100
+        self.rect2.left = 200
+
+        self.area = pygame.Rect(0, 0, self.rect1.width, self.rect1.height)
+
+        self.ticks = 0
+
+    def draw(self):
+        self.screen.fill(BLACK)
+        self.screen.blit(self.robot1, self.rect1)
+        self.screen.blit(self.robot2, self.rect2, self.area)
+
+    def update(self, dt):
+        self.ticks += dt
+
+        if self.ticks > 1/60:
+            self.ticks = self.ticks - 1/60
+
+            self.area.y += 1
+
+            if self.area.y >= 126:
+                self.area.y = 0
+
+
 def main():
     pygame.init()
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption(SCREEN_TITLE)
 
-    robot1 = pygame.image.load('resources/character_robot_jump.png').convert_alpha()
-    rect1 = robot1.get_rect()
-    rect1.top = 100
-    rect1.left = 100
-
-    robot2 = pygame.image.load('resources/character_robot_jump-2y.png').convert_alpha()
-    rect2 = robot2.get_rect()
-    rect2.top = 100
-    rect2.left = 200
-    area = pygame.Rect(0, 0, rect1.width, rect1.height)
+    demo = Demo(screen)
 
     now = time.time()
     dt = 0
     while True:
-        screen.fill(BLACK)
-        screen.blit(robot1, rect1)
-        screen.blit(robot2, rect2, area)
+        demo.draw()
         pygame.display.flip()
 
-        dt = dt + time.time() - now
+        dt = time.time() - now
         now = time.time()
-        if dt > 1/60:
-            dt = dt - 1/60
 
-            area.y += 1
-
-            if area.y >= 126:
-                area.y = 0
+        demo.update(dt)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
