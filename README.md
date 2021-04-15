@@ -11,6 +11,9 @@ Python…
 Click through for more info:
 
 * [01-scrolling-texture](01-scrolling-texture)
+* [02-text-monospaced](02-text-monospaced)
+* [03-text-variable](03-text-variable)
+* [04-text-entry](04-text-entry)
 * [05-image-fades](05-image-fades)
 * [07-animated-icon](07-animated-icon)
 * [11-tilemap](11-tilemap)
