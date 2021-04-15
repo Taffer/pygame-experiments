@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-''' Experiment 1 - Scrolling Texture
-
+'''
 By Chris Herborth (https://github.com/Taffer)
 MIT license, see LICENSE.md for details.
 '''
