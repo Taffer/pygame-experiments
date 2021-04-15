@@ -11,7 +11,7 @@ import time
 
 from xml.etree import ElementTree
 
-SCREEN_TITLE = 'Experiment 5 - Image Fades'
+SCREEN_TITLE = 'Experiment 11 - Tilemap'
 
 SCREEN_WIDTH = 1280  # 720p screen
 SCREEN_HEIGHT = 720

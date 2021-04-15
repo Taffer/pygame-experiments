@@ -8,7 +8,7 @@ import pygame.gfxdraw
 import time
 import sys
 
-SCREEN_TITLE = 'Experiment 5 - Image Fades'
+SCREEN_TITLE = 'Experiment 7 - Animated Icon'
 
 SCREEN_WIDTH = 1280  # 720p screen
 SCREEN_HEIGHT = 720
