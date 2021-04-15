@@ -1,0 +1,16 @@
+{
+    "folders":
+    [
+        {
+            "name": "Experiment 3 - Text Variable",
+            "path": "."
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "Pygame - Main",
+            "shell_cmd": "cd $project_path ; python3 main.py",
+        },
+    ],
+}
