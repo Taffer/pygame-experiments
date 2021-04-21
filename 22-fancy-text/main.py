@@ -1,4 +1,4 @@
-# Experiment 11 - Tilemap
+# Experiment 22 - Fancy Text
 #
 # By Chris Herborth (https://github.com/Taffer)
 # MIT license, see LICENSE.md for details.
