@@ -1,0 +1,16 @@
+{
+    "folders":
+    [
+        {
+            "name": "Experiment 23 - Sprite Unwalkables",
+            "path": "."
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "Pygame - Main",
+            "shell_cmd": "cd $project_path ; python3 -u main.py",
+        },
+    ],
+}

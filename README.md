@@ -17,7 +17,9 @@ Click through for more info:
 * [05-image-fades](05-image-fades)
 * [07-animated-icon](07-animated-icon)
 * [11-tilemap](11-tilemap)
+* [14-animated-sprite](14-animated-sprite)
 * [22-fancy-text](22-fancy-text)
+* [23-sprite-unwalkables](23-sprite-unwalkables)
 
 ## `pycodestyle`
 
