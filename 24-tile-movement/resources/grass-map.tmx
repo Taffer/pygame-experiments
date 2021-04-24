@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="29" height="21" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" source="terrain-map-v7.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="29" height="21">
+  <data encoding="base64" compression="zlib">
+   eJxTY2JgUKAjVgRiJiDmZKAf9mQctXPUzlE7R+0ctXPUzlE7R+3EbScz0E5tRvphfyAGAKMiIK4=
+  </data>
+ </layer>
+</map>

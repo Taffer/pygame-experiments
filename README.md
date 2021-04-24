@@ -20,6 +20,7 @@ Click through for more info:
 * [14-animated-sprite](14-animated-sprite)
 * [22-fancy-text](22-fancy-text)
 * [23-sprite-unwalkables](23-sprite-unwalkables)
+* [24-tile-movement](24-tile-movement)
 
 ## `pycodestyle`
 
