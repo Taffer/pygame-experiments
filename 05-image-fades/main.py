@@ -67,7 +67,9 @@ def main():
     now = time.time()
     dt = 0
 
-    while True:
+    playing = True
+
+    while playing:
         demo.draw()
         pygame.display.flip()
 
@@ -78,9 +80,12 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit()
+                playing = False
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-                sys.exit()
+                playing = False
+
+    pygame.quit()
+    sys.exit()
 
 
 if __name__ == '__main__':

@@ -117,7 +117,7 @@ class Demo:
 
     def draw(self):
         self.screen.fill(BLACK)
-        self.font.render_to(self.screen, (10, 10), 'Press any key to add text.', WHITE)
+        self.font.render_to(self.screen, (10, 10), 'Press [Space] to add text.', WHITE)
         self.textview.draw(self.screen)
 
     def update(self, dt):
@@ -137,7 +137,9 @@ def main():
 
     add_idx = 0
 
-    while True:
+    playing = True
+
+    while playing:
         demo.draw()
         pygame.display.flip()
 
@@ -148,15 +150,18 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit()
+                playing = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    sys.exit()
+                    playing = False
                 elif event.key == pygame.K_SPACE:
                     demo.textview.add_text(FORMATTED_TEXT[add_idx])
                     add_idx += 1
                     if add_idx >= len(FORMATTED_TEXT):
                         add_idx = 0
+
+    pygame.quit()
+    sys.exit()
 
 
 if __name__ == '__main__':

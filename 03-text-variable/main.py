@@ -109,7 +109,9 @@ def main():
 
     text_idx = 0
 
-    while True:
+    playing = True
+
+    while playing:
         demo.draw()
         pygame.display.flip()
 
@@ -120,16 +122,19 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit()
+                playing = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    sys.exit()
+                    playing = False
                 elif event.key == pygame.K_SPACE:
                     # Add moar text.
                     demo.add_text(TEXT[text_idx])
                     text_idx += 1
                     if text_idx >= len(TEXT):
                         text_idx = 0
+
+    pygame.quit()
+    sys.exit()
 
 
 if __name__ == '__main__':

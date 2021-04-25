@@ -342,7 +342,9 @@ def main() -> None:
     now = time.time()
     dt = 0
 
-    while True:
+    playing = True
+
+    while playing:
         demo.draw()
         pygame.display.flip()
 
@@ -353,13 +355,16 @@ def main() -> None:
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit()
+                playing = False
             elif event.type == pygame.KEYDOWN:
                 demo.keystate[event.key] = True
             elif event.type == pygame.KEYUP:
                 demo.keystate[event.key] = False
                 if event.key == pygame.K_ESCAPE:
-                    sys.exit()
+                    playing = False
+
+    pygame.quit()
+    sys.exit()
 
 
 if __name__ == '__main__':

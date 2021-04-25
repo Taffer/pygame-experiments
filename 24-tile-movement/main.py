@@ -1,4 +1,4 @@
-# Experiment 23 - Sprite Unwalkables
+# Experiment 24 - Tile Movement
 #
 # By Chris Herborth (https://github.com/Taffer)
 # MIT license, see LICENSE.md for details.
@@ -15,7 +15,7 @@ import zlib
 
 from xml.etree import ElementTree
 
-SCREEN_TITLE = 'Experiment 23 - Sprite Unwalkables'
+SCREEN_TITLE = 'Experiment 24 - Tile Movement'
 
 SCREEN_WIDTH = 1280  # 720p screen
 SCREEN_HEIGHT = 720

@@ -134,7 +134,9 @@ def main():
     now = time.time()
     dt = 0
 
-    while True:
+    playing = True
+
+    while playing:
         demo.draw()
         pygame.display.flip()
 
@@ -145,10 +147,10 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit()
+                playing = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    sys.exit()
+                    playing = False
                 elif event.key in (pygame.K_w, pygame.K_UP):
                     demo.view_up()
                 elif event.key in (pygame.K_s, pygame.K_DOWN):
@@ -157,6 +159,9 @@ def main():
                     demo.view_left()
                 elif event.key in (pygame.K_d, pygame.K_RIGHT):
                     demo.view_right()
+
+    pygame.quit()
+    sys.exit()
 
 
 if __name__ == '__main__':

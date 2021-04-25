@@ -45,7 +45,7 @@ class Demo:
         text_x = 100
         text_y = 100
 
-        self.font.render_to(self.screen, (10, 10), 'Press [Space] to add text.', WHITE)
+        self.font.render_to(self.screen, (10, 10), 'Type to add text.', WHITE)
 
         # Draw a rectangle around the text area so we can see if we go over.
         rect = pygame.Rect(text_x, text_y, self.max_columns * self.dx, self.max_lines * self.dy)
@@ -75,7 +75,9 @@ def main():
     now = time.time()
     dt = 0
 
-    while True:
+    playing = True
+
+    while playing:
         demo.draw()
         pygame.display.flip()
 
@@ -86,10 +88,10 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit()
+                playing = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    sys.exit()
+                    playing = False
                 elif event.key == pygame.K_RETURN:
                     # Add moar text.
                     demo.text.append(demo.cursor)
@@ -101,6 +103,9 @@ def main():
                     demo.cursor += '?'
                 else:
                     demo.cursor += chr(event.key)
+
+    pygame.quit()
+    sys.exit()
 
 
 if __name__ == '__main__':
