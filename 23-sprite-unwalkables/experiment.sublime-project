@@ -10,7 +10,13 @@
     [
         {
             "name": "Pygame - Main",
-            "shell_cmd": "cd $project_path ; python3 -u main.py",
+            "working_dir": "$project_path",
+            "linux": {
+                "shell_cmd": "python3 main.py",
+            },
+            "windows": {
+               "shell_cmd": "python main.py",
+            }
         },
     ],
 }
