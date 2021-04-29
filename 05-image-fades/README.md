@@ -11,6 +11,12 @@ You can run it from this directory with:
 python3 main.py
 ```
 
+or:
+
+```sh
+python main.py
+```
+
 If you're using Sublime Text:
 
 1. Open the project.
