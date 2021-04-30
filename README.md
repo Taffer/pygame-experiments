@@ -18,6 +18,7 @@ Click through for more info:
 * [06-ui-dialog](06-ui-dialog)
 * [07-animated-icon](07-animated-icon)
 * [08-text-styled](08-text-styled)
+* [09-ui-button](09-ui-button)
 * [11-tilemap](11-tilemap)
 * [14-animated-sprite](14-animated-sprite)
 * [22-fancy-text](22-fancy-text)

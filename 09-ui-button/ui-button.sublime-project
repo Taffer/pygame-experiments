@@ -1,0 +1,22 @@
+{
+    "folders":
+    [
+        {
+            "name": "Experiment 9 - UI Button",
+            "path": "."
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "Pygame - Main",
+            "working_dir": "$project_path",
+            "linux": {
+                "shell_cmd": "python3 -u main.py",
+            },
+            "windows": {
+               "shell_cmd": "python -u main.py",
+            }
+        },
+    ],
+}
