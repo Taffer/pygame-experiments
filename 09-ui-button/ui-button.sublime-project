@@ -12,10 +12,22 @@
             "name": "Pygame - Main",
             "working_dir": "$project_path",
             "linux": {
-                "shell_cmd": "python3 -u main.py",
+                "shell_cmd": "python3 main.py",
             },
             "windows": {
-               "shell_cmd": "python -u main.py",
+                "shell_cmd": "python main.py"
+            }
+        },
+        {
+            "name": "Pygame - Main (WSL)",
+            "working_dir": "$project_path",
+            "windows": {
+                "cmd": [
+                    "wsl.exe",
+                    "python.exe",
+                    "-u",
+                    "main.py"
+                ]
             }
         },
     ],
