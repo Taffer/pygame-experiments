@@ -1,4 +1,4 @@
-# Experiment 22 - Sprite Unwalkables
+# Experiment 23 - Sprite Unwalkables
 
 In this experiment, we'll combine #11 - Tilemap with #14 - Animated Sprite,
 then demonstrate a viewport that tries to stay centred on the sprite, and
