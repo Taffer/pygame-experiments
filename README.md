@@ -21,6 +21,7 @@ Click through for more info:
 * [09-ui-button](09-ui-button)
 * [10-ui-spinbox](10-ui-spinbox)
 * [11-tilemap](11-tilemap)
+* [12-minimap-tilemap](12-minimap-tilemap)
 * [14-animated-sprite](14-animated-sprite)
 * [22-fancy-text](22-fancy-text)
 * [23-sprite-unwalkables](23-sprite-unwalkables)
