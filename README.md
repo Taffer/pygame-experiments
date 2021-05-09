@@ -19,6 +19,7 @@ Click through for more info:
 * [07-animated-icon](07-animated-icon)
 * [08-text-styled](08-text-styled)
 * [09-ui-button](09-ui-button)
+* [10-ui-spinbox](10-ui-spinbox)
 * [11-tilemap](11-tilemap)
 * [14-animated-sprite](14-animated-sprite)
 * [22-fancy-text](22-fancy-text)
