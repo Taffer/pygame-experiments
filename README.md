@@ -24,6 +24,7 @@ Click through for more info:
 * [12-minimap-tilemap](12-minimap-tilemap)
 * [13-rect-fades](13-rect-fades)
 * [14-animated-sprite](14-animated-sprite)
+* [15-text-dropshadow](15-text-dropshadow)
 * [22-fancy-text](22-fancy-text)
 * [23-sprite-unwalkables](23-sprite-unwalkables)
 * [24-tile-movement](24-tile-movement)
