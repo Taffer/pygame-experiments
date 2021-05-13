@@ -26,6 +26,7 @@ Click through for more info:
 * [14-animated-sprite](14-animated-sprite)
 * [15-text-dropshadow](15-text-dropshadow)
 * [16-joystick](16-joystick)
+* [17-sprite-joystick](17-sprite-joystick)
 * [22-fancy-text](22-fancy-text)
 * [23-sprite-unwalkables](23-sprite-unwalkables)
 * [24-tile-movement](24-tile-movement)
