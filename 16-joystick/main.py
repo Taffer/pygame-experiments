@@ -25,6 +25,8 @@ class Demo:
 
         self.mono = pygame.freetype.Font('resources/LiberationMono-Bold.ttf', 16)
 
+        self.joystick = None
+
     def draw(self):
         self.screen.fill(BLACK)
 
@@ -34,20 +36,21 @@ class Demo:
         self.mono.render_to(self.screen, (10, 30), f'Found {found} joystick(s).', WHITE)
 
         if found > 0:
-            joystick = pygame.joystick.Joystick(0)  # This demo only supports the first joystick.
+            if self.joystick is None:
+                self.joystick = pygame.joystick.Joystick(0)  # This demo only supports the first joystick.
             self.mono.render_to(self.screen, (10, 50), 'Joystick #1:', WHITE)
-            self.mono.render_to(self.screen, (20, 70), joystick.get_name(), WHITE)
-            self.mono.render_to(self.screen, (20, 90), joystick.get_guid(), WHITE)
+            self.mono.render_to(self.screen, (20, 70), self.joystick.get_name(), WHITE)
+            self.mono.render_to(self.screen, (20, 90), self.joystick.get_guid(), WHITE)
 
             y = 130
-            for i in range(joystick.get_numaxes()):
-                value = joystick.get_axis(i)
+            for i in range(self.joystick.get_numaxes()):
+                value = self.joystick.get_axis(i)
                 self.mono.render_to(self.screen, (20, y), f'Axis {i}: {value}', WHITE)
                 y += 20
 
             y += 20
-            for i in range(joystick.get_numbuttons()):
-                value = joystick.get_button(i)
+            for i in range(self.joystick.get_numbuttons()):
+                value = self.joystick.get_button(i)
                 if value:
                     self.mono.render_to(self.screen, (20, y), f'Button {i}: Down', WHITE)
                 else:
@@ -55,8 +58,8 @@ class Demo:
                 y += 20
 
             y += 20
-            for i in range(joystick.get_numhats()):
-                value = joystick.get_hat(i)
+            for i in range(self.joystick.get_numhats()):
+                value = self.joystick.get_hat(i)
                 self.mono.render_to(self.screen, (20, y), f'Hat {i}: {value}', WHITE)
                 y += 20
 
@@ -93,6 +96,10 @@ def main():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     playing = False
+            elif event.type == pygame.JOYBUTTONDOWN:
+                print("Joystick button pressed.")
+            elif event.type == pygame.JOYBUTTONUP:
+                print("Joystick button released.")
 
     pygame.quit()
     sys.exit()
