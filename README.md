@@ -28,6 +28,7 @@ Click through for more info:
 * [16-joystick](16-joystick)
 * [17-sprite-joystick](17-sprite-joystick)
 * [18-tilemap-layers](18-tilemap-layers)
+* [19-simple-lighting](19-simple-lighting)
 * [22-fancy-text](22-fancy-text)
 * [23-sprite-unwalkables](23-sprite-unwalkables)
 * [24-tile-movement](24-tile-movement)
