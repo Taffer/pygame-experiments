@@ -30,24 +30,31 @@ Click through for more info:
 * [18-tilemap-layers](18-tilemap-layers)
 * [19-simple-lighting](19-simple-lighting)
 * [20-lpc-sprite](20-lpc-sprite)
+* [21-blocked-sprite](21-blocked-sprite)
 * [22-fancy-text](22-fancy-text)
 * [23-sprite-unwalkables](23-sprite-unwalkables)
 * [24-tile-movement](24-tile-movement)
 
 ## `pycodestyle`
 
-Note that I use the following settings for `pycodestyle` while working in
+Note that I use the following settings for `flake8` while working in
 Sublime Text, your favourite editor or IDE might vary. Basically, doc comments
 wrap at 80 characters, and the maximum line length is 132 characters (in homage
 to þe olde terminals of yore):
 
 ```json
-        "pycodestyle": {
+// SublimeLinter Settings - User
+{
+    // Linter settings.
+    "linters": {
+        "flake8": {
             "args": [
-                "--max-doc-length=80",
-                "--max-line-length=132"
+                "--max-line-length=132",
+                "--max-doc-length=80"
             ]
-        },
+        }
+    }
+}
 ```
 
 ## Bribe me
