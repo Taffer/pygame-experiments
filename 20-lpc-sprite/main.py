@@ -3,7 +3,6 @@
 # By Chris Herborth (https://github.com/Taffer)
 # MIT license, see LICENSE.md for details.
 
-import math
 import pygame
 import pygame.freetype
 import pygame.gfxdraw

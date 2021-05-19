@@ -25,6 +25,7 @@ Press Escape to exit the demo.
 
 This is written in Python 3, using the [PyGame](https://www.pygame.org/news) 2D
 game engine.
+
 ### Graphics
 
 * `grass.png` - A
