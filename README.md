@@ -34,8 +34,10 @@ Click through for more info:
 * [22-fancy-text](22-fancy-text)
 * [23-sprite-unwalkables](23-sprite-unwalkables)
 * [24-tile-movement](24-tile-movement)
+* [25-fps-counter](25-fps-counter)
+* [26-ultima-tiles](26-ultima-tiles)
 
-## `pycodestyle`
+## `flake8`
 
 Note that I use the following settings for `flake8` while working in
 Sublime Text, your favourite editor or IDE might vary. Basically, doc comments
