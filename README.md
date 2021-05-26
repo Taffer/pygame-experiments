@@ -36,6 +36,7 @@ Click through for more info:
 * [24-tile-movement](24-tile-movement)
 * [25-fps-counter](25-fps-counter)
 * [26-ultima-tiles](26-ultima-tiles)
+* [27-scaled-tiles](27-scaled-tiles)
 
 ## `flake8`
 
