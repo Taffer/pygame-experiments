@@ -37,6 +37,7 @@ Click through for more info:
 * [25-fps-counter](25-fps-counter)
 * [26-ultima-tiles](26-ultima-tiles)
 * [27-scaled-tiles](27-scaled-tiles)
+* [28-map-triggers](28-map-triggers)
 
 ## `flake8`
 
