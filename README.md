@@ -38,6 +38,7 @@ Click through for more info:
 * [26-ultima-tiles](26-ultima-tiles)
 * [27-scaled-tiles](27-scaled-tiles)
 * [28-map-triggers](28-map-triggers)
+* [29-conversation-dialog](29-conversation-dialog)
 
 ## `flake8`
 
